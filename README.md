@@ -1,3 +1,4 @@
+```
 Linux raspi01 4.14.50-v7+ #1122 SMP Tue Jun 19 12:26:26 BST 2018 armv7l
 
 The programs included with the Debian GNU/Linux system are free software;
@@ -32,3 +33,4 @@ serial number:    aa:bb:cc:dd:e2
 # P4_ON / P4_OFF - SPARE PORT 4        #
 ########################################
 
+```
