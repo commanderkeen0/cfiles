@@ -1,0 +1,18 @@
+! using the ALARM contact on a Cisco IR800 industrial router or an IE industrial switch.
+! if the contacts are closed a logging event happens
+! therefore logging should be enabled
+! I have written a simple embeded event manager script to bring a GRE tunnel interface up once the switch is closed
+! A simple dip switch for this testing was used
+
+event manager applet ALARM_ON
+ event syslog pattern "ALARM_CONTACT-0-EXTERNAL_ALARM_CONTACT_ASSERT"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "conf t"
+ action 3.0 cli command "int tun 100"
+ action 4.0 cli command "no shut"
+event manager applet ALARM_OFF
+ event syslog pattern "ALARM_CONTACT-0-EXTERNAL_ALARM_CONTACT_CLEAR"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "conf t"
+ action 3.0 cli command "int tun 100"
+ action 4.0 cli command "shut"
